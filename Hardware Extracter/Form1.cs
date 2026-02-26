@@ -18,9 +18,8 @@ namespace Hardware_Extracter
 {
     public partial class Form1 : Form
     {
-        private const string BotToken = "8681588899:AAHDU4O6S1YwXaEdYFtmk6fQMKxow9CfXAY";
-        private const string ChatId = "1661811728";
-
+        private const string BotToken = "YOUR_BOT_TOKEN_HERE";
+        private const string ChatId = "YOUR_CHAT_ID_HERE";
         public Form1()
         {
             InitializeComponent();
