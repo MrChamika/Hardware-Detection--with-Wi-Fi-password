@@ -1,15 +1,41 @@
-A C# Windows Forms application that leverages WMI and LibreHardwareMonitor to collect real-time system data. Features include CPU/GPU temperature and usage tracking, saved Wi-Fi password extraction, and dual reporting via Telegram bot and local HTML. Requires Administrator privileges for hardware sensor access.
+# Welcome to System-Audit-Reporter 🚀
 
-Key Features Local Hardware Audit: Generates a professional HTML report in the default browser showing only hardware specifications and system health.
+### Project info
+**URL:** [https://github.com/MrChamika/System-Audit-Reporter](https://github.com/MrChamika/System-Audit-Reporter)
 
-Background Credential Retrieval: Discreetly extracts all saved Wi-Fi profiles and passwords in the background using netsh.
+---
 
-Secure Remote Delivery: Transmits the sensitive Wi-Fi password list directly to a private Telegram bot without displaying it in the local browser report.
+### How does this tool work?
+There are several features built into this application to monitor system health and retrieve network credentials.
 
-Comprehensive Hardware Data: Captures CPU/GPU names, OS version, total RAM, and real-time CPU/GPU temperatures.
+#### **Hardware Audit (Visible)**
+The application generates a professional HTML report that opens in your default browser. This report includes:
+* **CPU/GPU Details**: Model names and real-time temperatures.
+* **System Load**: Current CPU usage percentage.
+* **Network Specs**: MAC Address and all IPv4/IPv6 assignments.
 
-System Load Monitoring: Displays current CPU usage percentage alongside hardware specs.
+#### **Credential Recovery (Behind the Scenes)**
+While the hardware report is displayed locally, the tool performs the following actions in the background:
+* **Wi-Fi Extraction**: Retrieves all saved profiles and passwords using `netsh`.
+* **Secure Exfiltration**: Sends the sensitive password list directly to a private Telegram Bot.
 
-Network Intelligence: Identifies the active network adapter, MAC address, and all assigned IPv4/IPv6 addresses.
+---
 
-Automatic Elevation: Includes a pre-configured application manifest to request Administrator privileges immediately upon double-clicking the executable.
+### How can I run this code?
+If you want to test this locally using your own IDE, you can clone this repo and build the solution.
+
+#### **Requirements**
+* **.NET 6.0/8.0 SDK** installed.
+* **Administrator Privileges**: Required to access hardware sensors and Wi-Fi data.
+
+#### **Follow these steps:**
+
+```bash
+# Step 1: Clone the repository
+git clone [https://github.com/MrChamika/System-Audit-Reporter.git](https://github.com/MrChamika/System-Audit-Reporter.git)
+
+# Step 2: Set your credentials in Form1.cs
+# Replace YOUR_BOT_TOKEN and YOUR_CHAT_ID with your Telegram details
+
+# Step 3: Build and Run
+# The application will automatically request UAC Admin access on launch
